@@ -15,6 +15,6 @@ FROM --platform=$BUILDPLATFORM alpine:3.21
 
 WORKDIR /workspace
 
-COPY --from=builder /workspace/webhook ./webhook
+COPY --from=builder /workspace/webhook ./
 
-ENTRYPOINT ["webhook"]
+CMD ["./webhook"]

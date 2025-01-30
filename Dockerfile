@@ -16,5 +16,6 @@ FROM --platform=$BUILDPLATFORM alpine:3.21
 WORKDIR /workspace
 
 COPY --from=builder /workspace/webhook ./
+RUN apk add --no-cache ca-certificates
 
 CMD ["./webhook"]
